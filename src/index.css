@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+body {
+  background: radial-gradient(circle at 20% 20%, #0f172a, #020617 70%);
+  color: white;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* subtle noise + depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -1;
+}
