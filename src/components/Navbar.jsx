@@ -3,9 +3,8 @@ import portfolioData from "../data/portfolioData";
 import { motion } from "framer-motion";
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("hero");
 
-  // Navigation items (edit here to change sections)
   const navItems = [
     { name: "Home", id: "hero" },
     { name: "About", id: "about" },
@@ -15,89 +14,75 @@ function Navbar() {
     { name: "Contact", id: "contact" },
   ];
 
-  // Styling variables (edit for design changes)
-  const navContainer =
-    "fixed w-full z-50 bg-black bg-opacity-70 backdrop-blur-md border-b border-gray-800";
-  const navContent =
-    "max-w-6xl mx-auto px-6 py-4 flex justify-between items-center";
-  const logoStyle = "text-xl font-bold text-primary cursor-pointer";
-  const navLinks = "hidden md:flex space-x-8 text-gray-300";
-  const mobileMenuBtn = "md:hidden text-white text-2xl";
-  const mobileMenu =
-    "md:hidden bg-black border-t border-gray-800 px-6 py-4 space-y-4";
+  // Styles (edit here for design tweaks)
+  const container =
+  "fixed top-0 left-0 w-full z-50 flex justify-center";
 
-  // Smooth scroll function
+ const navWrapper =
+  "w-[90%] max-w-6xl flex justify-between items-center px-6 py-3 mt-4 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-glow";
+
+  const logoStyle =
+    "text-primary font-bold text-sm md:text-base cursor-pointer glow-text";
+
+  const linkBase =
+    "relative text-gray-300 text-sm cursor-pointer transition";
+
+  const activeLink =
+    "text-primary";
+
   function scrollToSection(id) {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false);
+    setActive(id);
   }
 
   return (
-    <div className={navContainer}>
-      <div className={navContent}>
-        {/* Logo */}
-        <div
-          className={logoStyle}
-          onClick={function () {
-            scrollToSection("hero");
-          }}
-        >
-          {portfolioData.personal.name}
-        </div>
+    <div className={container}>
+     <div className={navWrapper}>
+  {/* LEFT: Name */}
+  <div
+    className={logoStyle}
+    onClick={function () {
+      scrollToSection("hero");
+    }}
+  >
+    {portfolioData.personal.name}
+  </div>
 
-        {/* Desktop Menu */}
-        <div className={navLinks}>
+  {/* RIGHT: Links */}
+  <div className="hidden md:flex items-center gap-8"></div>
+
+        {/* Links */}
+        <div className="hidden md:flex items-center gap-6">
           {navItems.map(function (item) {
+            const isActive = active === item.id;
+
             return (
               <div
                 key={item.id}
-                className="cursor-pointer hover:text-primary transition duration-300"
+                className={
+                  linkBase + " " + (isActive ? activeLink : "")
+                }
                 onClick={function () {
                   scrollToSection(item.id);
                 }}
               >
                 {item.name}
+
+                {/* Animated underline */}
+                {isActive && (
+                  <motion.div
+                    layoutId="underline"
+                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-primary"
+                  />
+                )}
               </div>
             );
           })}
-        </div>
-
-        {/* Mobile Button */}
-        <div
-          className={mobileMenuBtn}
-          onClick={function () {
-            setIsOpen(!isOpen);
-          }}
-        >
-          ☰
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className={mobileMenu}
-        >
-          {navItems.map(function (item) {
-            return (
-              <div
-                key={item.id}
-                className="text-gray-300 cursor-pointer hover:text-primary"
-                onClick={function () {
-                  scrollToSection(item.id);
-                }}
-              >
-                {item.name}
-              </div>
-            );
-          })}
-        </motion.div>
-      )}
     </div>
   );
 }

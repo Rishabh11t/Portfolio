@@ -4,7 +4,6 @@ const portfolioData = {
   personal: {
     name: "Rishab Tripathi",
     email: "rishabh11tripathi@gmail.com",
-    phone: "8223957014",
     linkedin: "https://linkedin.com/in/rishab-tripathi-366621283",
     github: "https://github.com/Rishabh11t",
     role: "Full Stack Developer | AI Enthusiast",

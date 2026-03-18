@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -6,9 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#22d3ee",
-        secondary: "#a78bfa",
+        primary: "#113642",
+        secondary: "#6366f1",
         background: "#020617",
+        card: "rgba(255,255,255,0.05)",
+      },
+      boxShadow: {
+        glow: "0 0 25px rgba(21, 22, 128, 0.3)",
       },
     },
   },

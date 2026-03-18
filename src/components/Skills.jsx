@@ -5,14 +5,16 @@ function Skills() {
   const skills = portfolioData.skills;
 
   // Styling variables (edit here for design changes)
+
+  const cardStyle =
+  "bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:scale-105 transition duration-300";
   const container = "bg-background px-6 py-20";
   const wrapper = "max-w-6xl mx-auto";
   const heading =
     "text-3xl md:text-4xl font-bold text-white mb-12 text-center";
 
   const grid = "grid md:grid-cols-2 gap-10";
-  const card =
-    "bg-[#111] border border-gray-800 rounded-xl p-6 hover:border-primary transition";
+  
 
   const categoryTitle =
     "text-lg font-semibold text-primary mb-4";
@@ -42,7 +44,7 @@ function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={card}
+            className={cardStyle}
           >
             <div className={categoryTitle}>
               Languages
@@ -67,7 +69,7 @@ function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={card}
+            className={cardStyle}
           >
             <div className={categoryTitle}>
               Frameworks and Libraries
@@ -92,7 +94,7 @@ function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={card}
+            className={cardStyle}
           >
             <div className={categoryTitle}>
               Databases
@@ -117,7 +119,7 @@ function Skills() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className={card}
+            className={cardStyle}
           >
             <div className={categoryTitle}>
               Tools and Platforms

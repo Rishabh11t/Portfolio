@@ -5,27 +5,38 @@ function Projects() {
   const projects = portfolioData.projects;
 
   // Styling variables (edit here for design changes)
+
   const container = "bg-background px-6 py-20";
   const wrapper = "max-w-6xl mx-auto";
+
   const heading =
     "text-3xl md:text-4xl font-bold text-white mb-12 text-center";
 
   const grid = "grid md:grid-cols-2 lg:grid-cols-3 gap-8";
 
-  const card =
-    "bg-[#111] border border-gray-800 rounded-xl p-6 hover:border-primary transition hover:scale-105";
+  const cardStyle =
+    "bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:scale-105 hover:border-cyan-400/40 transition duration-300 shadow-lg hover:shadow-cyan-500/10";
 
-  const title = "text-xl font-semibold text-white mb-2";
-  const description = "text-gray-400 text-sm mb-4";
-  const techContainer = "flex flex-wrap gap-2 mb-4";
+  const title =
+    "text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition";
+
+  const description =
+    "text-gray-400 text-sm mb-4";
+
+  const techContainer =
+    "flex flex-wrap gap-2 mb-4";
+
   const techItem =
     "text-xs border border-gray-700 px-2 py-1 rounded text-gray-300";
 
-  const buttonContainer = "flex gap-4 mt-4";
+  const buttonContainer =
+    "flex gap-4 mt-4";
+
   const liveBtn =
-    "px-4 py-2 bg-primary text-black text-sm rounded hover:opacity-80 transition";
+    "px-4 py-2 bg-cyan-400 text-black text-sm rounded hover:scale-105 transition glow";
+
   const codeBtn =
-    "px-4 py-2 border border-primary text-primary text-sm rounded hover:bg-primary hover:text-black transition";
+    "px-4 py-2 border border-cyan-400 text-cyan-400 text-sm rounded hover:bg-cyan-400 hover:text-black transition";
 
   return (
     <div
@@ -33,6 +44,7 @@ function Projects() {
       className={container}
     >
       <div className={wrapper}>
+        
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -50,8 +62,9 @@ function Projects() {
                 key={index}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className={card}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className={cardStyle + " group"}
               >
                 {/* Project Name */}
                 <div className={title}>

@@ -2,20 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global styles */
+/* GLOBAL RESET */
 body {
-  background: radial-gradient(circle at 20% 20%, #0f172a, #020617 70%);
+  background: radial-gradient(circle at top, #020617, #000000);
   color: white;
   font-family: sans-serif;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* subtle noise + depth */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle, rgba(0,255,255,0.05) 1px, transparent 1px);
-  background-size: 40px 40px;
-  z-index: -1;
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #093669;
+  border-radius: 10px;
+}
+
+/* GLASS EFFECT UTILITY */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* GLOW TEXT */
+.glow-text {
+  text-shadow: 0 0 10px rgba(33, 17, 121, 0.7);
 }

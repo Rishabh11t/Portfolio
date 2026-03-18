@@ -14,8 +14,8 @@ function Experience() {
   const itemContainer = "mb-10 ml-6";
   const dot =
     "absolute w-3 h-3 bg-primary rounded-full -left-1.5 border border-black";
-  const card =
-    "bg-[#111] border border-gray-800 rounded-xl p-6 hover:border-primary transition";
+ const cardStyle =
+  "bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:scale-105 transition duration-300";
 
   const roleStyle = "text-lg font-semibold text-white";
   const companyStyle = "text-primary text-sm mb-1";
@@ -52,7 +52,7 @@ function Experience() {
                 <div className={dot}></div>
 
                 {/* Card */}
-                <div className={card}>
+                <div className={cardStyle}>
                   <div className={roleStyle}>
                     {item.role}
                   </div>

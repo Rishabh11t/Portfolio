@@ -67,20 +67,7 @@ function Contact() {
             </div>
           </motion.div>
 
-          {/* Phone */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className={card}
-          >
-            <div className={label}>
-              Phone
-            </div>
-            <div className={value}>
-              {personal.phone}
-            </div>
-          </motion.div>
-
+         
           {/* LinkedIn */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
