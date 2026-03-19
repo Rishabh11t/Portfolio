@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+       fontFamily: {
+    heading: ["Orbitron", "sans-serif"],
+    body: ["Inter", "sans-serif"],
+  },
       colors: {
   primary: "#06b6d4",     // neon cyan
   secondary: "#f43f5e",   // neon pink/red contrast
@@ -19,3 +23,4 @@ boxShadow: {
   },
   plugins: [],
 };
+

@@ -62,3 +62,4 @@ body {
 .btn-outline {
   @apply px-6 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300;
 }
+

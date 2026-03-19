@@ -14,74 +14,64 @@ function Navbar() {
     { name: "Contact", id: "contact" },
   ];
 
-  // Styles (edit here for design tweaks)
-  const container =
-  "fixed top-0 left-0 w-full z-50 flex justify-center";
-
- const navWrapper =
-  "w-[90%] max-w-6xl flex justify-between items-center px-6 py-3 mt-4 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 shadow-glow";
-
-  const logoStyle =
-    "text-primary font-bold text-sm md:text-base cursor-pointer glow-text";
-
-  const linkBase =
-    "relative text-gray-300 text-sm cursor-pointer transition";
-
-  const activeLink =
-    "text-primary";
-
   function scrollToSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setActive(id);
   }
 
   return (
-    <div className={container}>
-     <div className={navWrapper}>
-  {/* LEFT: Name */}
-  <div
-    className={logoStyle}
-    onClick={function () {
-      scrollToSection("hero");
-    }}
-  >
-    {portfolioData.personal.name}
-  </div>
+    <div className="fixed top-0 left-0 w-full z-50 flex justify-center">
 
-  {/* RIGHT: Links */}
-  <div className="hidden md:flex items-center gap-8"></div>
+      <div className="w-[92%] max-w-6xl mt-4 px-6 py-3 rounded-full 
+        bg-white/5 backdrop-blur-xl border border-white/10 
+        shadow-[0_0_20px_rgba(6,182,212,0.2)]
+        flex justify-between items-center">
 
-        {/* Links */}
-        <div className="hidden md:flex items-center gap-6">
-          {navItems.map(function (item) {
+        {/* LOGO */}
+        <div
+          onClick={() => scrollToSection("hero")}
+          className="font-heading text-cyan-400 text-sm md:text-base cursor-pointer tracking-wider hover:scale-105 transition"
+        >
+          {portfolioData.personal.name}
+        </div>
+
+        {/* LINKS */}
+        <div className="hidden md:flex items-center gap-6 relative">
+
+          {navItems.map((item) => {
             const isActive = active === item.id;
 
             return (
               <div
                 key={item.id}
-                className={
-                  linkBase + " " + (isActive ? activeLink : "")
-                }
-                onClick={function () {
-                  scrollToSection(item.id);
-                }}
+                onClick={() => scrollToSection(item.id)}
+                className="relative cursor-pointer px-3 py-1 text-sm font-body"
               >
-                {item.name}
-
-                {/* Animated underline */}
+                {/* ACTIVE BACKGROUND PILL */}
                 {isActive && (
                   <motion.div
-                    layoutId="underline"
-                    className="absolute left-0 -bottom-1 w-full h-[2px] bg-primary"
+                    layoutId="nav-pill"
+                    className="absolute inset-0 rounded-full bg-cyan-400/20 border border-cyan-400/30"
+                    transition={{ type: "spring", stiffness: 300, damping: 25 }}
                   />
                 )}
+
+                {/* TEXT */}
+                <span
+                  className={`relative z-10 transition ${
+                    isActive
+                      ? "text-cyan-400"
+                      : "text-gray-300 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </span>
               </div>
             );
           })}
+
         </div>
+
       </div>
     </div>
   );
