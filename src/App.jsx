@@ -1,27 +1,56 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import ParticlesBg from "./components/ParticlesBg";
-import CursorGlow from "./components/CursorGlow";
+import Navbar from "./layout/Navbar";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Experience from "./sections/Experience";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
+import Footer from "./layout/Footer";
+import ParticlesBg from "./effect/ParticlesBg";
+import CursorGlow from "./effect/CursorGlow";
 
 function App() {
   return (
-    <div>
-       <ParticlesBg />
-      <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
+    <div className="relative bg-[#020617] text-white overflow-x-hidden">
+
+      {/* Background Effects */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <ParticlesBg />
+      </div>
+
+      {/* Cursor Effect */}
       <CursorGlow />
+
+      {/* Main Content */}
+      <Navbar />
+
+      <main className="max-w-6xl mx-auto px-6">
+        <section id="home" className="min-h-screen flex items-center">
+          <Hero />
+        </section>
+
+        <section id="about" className="py-24">
+          <About />
+        </section>
+
+        <section id="skills" className="py-24">
+          <Skills />
+        </section>
+
+        <section id="experience" className="py-24">
+          <Experience />
+        </section>
+
+        <section id="projects" className="py-24">
+          <Projects />
+        </section>
+
+        <section id="contact" className="py-24">
+          <Contact />
+        </section>
+      </main>
+
+      <Footer />
     </div>
   );
 }

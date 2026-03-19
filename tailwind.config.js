@@ -7,14 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#113642",
-        secondary: "#6366f1",
-        background: "#020617",
-        card: "rgba(255,255,255,0.05)",
-      },
-      boxShadow: {
-        glow: "0 0 25px rgba(21, 22, 128, 0.3)",
-      },
+  primary: "#06b6d4",     // neon cyan
+  secondary: "#f43f5e",   // neon pink/red contrast
+  background: "#020617",
+  card: "rgba(15, 23, 42, 0.8)",
+},
+boxShadow: {
+  glow: "0 0 20px rgba(6, 182, 212, 0.6)",
+},
     },
   },
   plugins: [],

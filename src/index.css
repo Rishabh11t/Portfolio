@@ -3,11 +3,15 @@
 @tailwind utilities;
 
 /* GLOBAL RESET */
-body {
-  background: radial-gradient(circle at top, #020617, #000000);
-  color: white;
-  font-family: sans-serif;
+html {
   scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-[#020617] text-white antialiased;
+  background: radial-gradient(circle at top, #020617, #000000);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 /* SCROLLBAR */
@@ -15,18 +19,46 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #093669;
+  background: linear-gradient(#06b6d4, #8b5cf6);
   border-radius: 10px;
 }
 
-/* GLASS EFFECT UTILITY */
+/* GLASS EFFECT (UPGRADED) */
 .glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
 }
 
-/* GLOW TEXT */
+/* HOVER GLOW CARD */
+.glass-hover {
+  transition: all 0.3s ease;
+}
+.glass-hover:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.3);
+}
+
+/* GRADIENT TEXT (IMPORTANT) */
+.gradient-text {
+  @apply bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent;
+}
+
+/* GLOW TEXT (BETTER) */
 .glow-text {
-  text-shadow: 0 0 10px rgba(33, 17, 121, 0.7);
+  text-shadow: 0 0 15px rgba(99, 102, 241, 0.8),
+               0 0 30px rgba(6, 182, 212, 0.5);
+}
+
+/* SECTION SPACING */
+.section {
+  @apply py-24;
+}
+
+/* BUTTON STYLES */
+.btn-primary {
+  @apply px-6 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition-all duration-300;
+}
+
+.btn-outline {
+  @apply px-6 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300;
 }
