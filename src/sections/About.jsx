@@ -5,8 +5,7 @@ function About() {
   const sectionStyle =
     "py-20 px-6 bg-background text-white";
 
-  const container =
-    "max-w-6xl mx-auto grid md:grid-cols-2 gap-10";
+const container = "bg-background px-6 py-16 md:py-20";
 
   const headingStyle =
     "text-3xl md:text-4xl font-heading font-bold mb-6";

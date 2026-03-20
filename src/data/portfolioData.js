@@ -85,7 +85,7 @@ organizations: [
     description:
       "Secure file sharing platform with unique access code system for controlled file access",
     tech: ["React", "Node.js", "Express.js", "MongoDB"],
-    image: "/projects/anyshare.png",
+    image: "/anyshare.png",
     github: "https://github.com/Rishabh11t", // replace with exact repo
     live: "https://anyshare-mern-frontend.vercel.app/",
     features: [
@@ -108,7 +108,7 @@ organizations: [
       "Express.js",
       "MongoDB",
     ],
-    image: "/projects/expensia.png",
+    image: "/expensia.png",
     github: "https://github.com/Rishabh11t", // replace with exact repo
     live: "https://expensiaaa.vercel.app/",
     features: [
@@ -123,11 +123,11 @@ organizations: [
     title: "Skin Disease Detector",
     description:
       "AI-based CNN model to classify skin diseases from images using deep learning",
-    tech: ["Python", "TensorFlow", "Keras", "Flask"],
-    image: "/projects/skin-ai.png",
+    tech: ["Python", "TensorFlow", "Keras", "Flask","Matplotlib"],
+    image: "/sdd.png",
     github:
       "https://github.com/Rishabh11t/Skin-Disease-Detector",
-    live: null,
+    live: "https://github.com/Rishabh11t/Skin-Disease-Detector",
     features: [
       "Image classification using CNN model",
       "High accuracy disease prediction",
