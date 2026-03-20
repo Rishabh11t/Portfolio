@@ -6,12 +6,12 @@ function Contact() {
   const personal = portfolioData.personal;
 
   return (
-    <section id="contact" className="section px-6">
+    <section id="contact" >
       <div className="max-w-5xl mx-auto text-center">
 
         {/* Heading */}
         <motion.h2
-          className="text-4xl font-bold mb-6 gradient-text"
+          className="text-4xl md:text-5xl font-heading font-bold  gradient-text text-center mb-16 tracking-wider flex items-center justify-center gap-3"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
         >

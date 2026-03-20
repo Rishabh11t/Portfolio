@@ -6,16 +6,16 @@ function Experience() {
   const experience = portfolioData.experience;
 
   return (
-    <section id="experience" className="section px-6">
+    <section id="experience">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
         <motion.h2
-          className="text-4xl font-bold text-center mb-20 gradient-text flex items-center justify-center gap-3"
+          className="text-4xl md:text-5xl font-heading font-bold text-center mb-16 tracking-wider  flex items-center justify-center gap-3"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
-          <FaBriefcase className="text-cyan-400" />
+          <FaBriefcase className="primary" />
           Experience
         </motion.h2>
 
@@ -51,7 +51,7 @@ function Experience() {
                   </h3>
 
                   {/* Company */}
-                  <p className="text-cyan-400 text-sm mb-1">
+                  <p className="primary text-sm mb-1">
                     {item.company}
                   </p>
 
@@ -64,7 +64,7 @@ function Experience() {
                   <ul className="space-y-2 text-sm text-gray-400">
                     {item.points.map((point, i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-cyan-400">•</span>
+                        <span className="primary">•</span>
                         <span>{point}</span>
                       </li>
                     ))}

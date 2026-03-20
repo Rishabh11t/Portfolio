@@ -23,7 +23,7 @@ const container = "bg-background px-6 py-16 md:py-20";
     "text-gray-400 text-sm";
 
   return (
-    <section id="about" className={sectionStyle}>
+    <section id="about">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
         {/* TOP LEFT → ABOUT ME */}

@@ -1,3 +1,4 @@
+import ParticlesBg from "./effect/ParticlesBg";
 import Navbar from "./layout/Navbar";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
@@ -6,17 +7,16 @@ import Experience from "./sections/Experience";
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import Footer from "./layout/Footer";
-import ParticlesBg from "./effect/ParticlesBg";
+
 import CursorGlow from "./effect/CursorGlow";
 
 function App() {
   return (
     <div className="relative bg-[#020617] text-white overflow-x-hidden">
 
-      {/* Background Effects */}
-      <div className="fixed inset-0 -z-10 pointer-events-none">
+     
         <ParticlesBg />
-      </div>
+      
 
       {/* Cursor Effect */}
       <CursorGlow />
@@ -24,7 +24,7 @@ function App() {
       {/* Main Content */}
       <Navbar />
 
-      <main className="max-w-6xl mx-auto px-6">
+      <main className="max-w-6xl mx-auto px-6 space-y-8 md:space-y-12">
         <section id="home" className="min-h-screen flex items-center">
           <Hero />
         </section>

@@ -52,7 +52,7 @@ function Footer() {
 
           <a
             href={`mailto:${personal.email}`}
-            className="text-gray-400 hover:text-cyan-400 text-xl transition hover:scale-125 hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.6)]"
+            className="text-gray-400 hover:primary text-xl transition hover:scale-125 hover:drop-shadow-[0_0_10px_rgba(6,182,212,0.6)]"
           >
             <FaEnvelope />
           </a>

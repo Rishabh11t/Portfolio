@@ -30,7 +30,7 @@ function Navbar() {
         {/* LOGO */}
         <div
           onClick={() => scrollToSection("hero")}
-          className="font-heading text-cyan-400 text-sm md:text-base cursor-pointer tracking-wider hover:scale-105 transition"
+          className="font-heading primary text-sm md:text-base cursor-pointer tracking-wider hover:scale-105 transition"
         >
           {portfolioData.personal.name}
         </div>
@@ -60,7 +60,7 @@ function Navbar() {
                 <span
                   className={`relative z-10 transition ${
                     isActive
-                      ? "text-cyan-400"
+                      ? "primary"
                       : "text-gray-300 hover:text-white"
                   }`}
                 >

@@ -50,7 +50,7 @@ function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-2xl text-cyan-400 mb-4"
+            className="text-lg md:text-2xl primary mb-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}

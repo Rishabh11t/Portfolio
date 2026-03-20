@@ -32,7 +32,7 @@ import {
 } from "react-icons/fa";
 
 const categoryIcons = {
-  "Languages": <FaCode className="text-cyan-400" />,
+  "Languages": <FaCode className="primary" />,
   "Frameworks & Libraries": <FaLayerGroup className="text-purple-400" />,
   "Databases": <FaDatabase className="text-green-400" />,
   "Tools & Platforms": <FaTools className="text-yellow-400" />,
@@ -78,12 +78,12 @@ function Skills() {
   ];
 
   return (
-    <section id="skills" className="section px-6">
+    <section id="skills">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
         <motion.h2
-          className="text-4xl font-bold text-center mb-16 gradient-text"
+          className="text-4xl md:text-5xl font-heading font-bold text-center mb-16 tracking-wider  flex items-center justify-center gap-3"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
         >
@@ -102,7 +102,7 @@ function Skills() {
               transition={{ delay: index * 0.1 }}
             >
               
-              <h3 className="flex items-center gap-2 text-lg font-semibold text-cyan-400 mb-4">
+              <h3 className="flex items-center gap-2 text-lg font-semibold primary mb-4">
   <span className="text-xl">
     {categoryIcons[category.title]}
   </span>
@@ -114,7 +114,7 @@ function Skills() {
                {category.data.map((item) => (
   <div
     key={item}
-    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-cyan-400 hover:text-cyan-400 hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition"
+    className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/5 border border-white/10 hover:border-primary hover:primary hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] transition"
   >
     <span className="text-lg">
       {skillIcons[item] || "⚡"}

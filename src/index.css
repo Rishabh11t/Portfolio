@@ -8,12 +8,11 @@ html {
 }
 
 body {
-  @apply bg-[#020617] text-white antialiased;
+  @apply font-body;
   background: radial-gradient(circle at top, #020617, #000000);
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  color: white;
+  scroll-behavior: smooth;
 }
-
 /* SCROLLBAR */
 ::-webkit-scrollbar {
   width: 6px;
@@ -49,17 +48,26 @@ body {
                0 0 30px rgba(6, 182, 212, 0.5);
 }
 
-/* SECTION SPACING */
-.section {
-  @apply py-24;
-}
+
 
 /* BUTTON STYLES */
 .btn-primary {
-  @apply px-6 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 transition-all duration-300;
+  @apply px-6 py-2 rounded-xl text-white font-medium 
+  bg-white/10 backdrop-blur-lg border border-white/20 
+  hover:bg-white/20 hover:scale-105 
+  transition-all duration-300;
 }
 
 .btn-outline {
   @apply px-6 py-2 rounded-xl border border-white/20 hover:bg-white/10 transition-all duration-300;
 }
 
+.section {
+  padding: 4rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 5rem 1.5rem;
+  }
+}

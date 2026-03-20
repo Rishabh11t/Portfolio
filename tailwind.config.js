@@ -6,12 +6,15 @@ export default {
   ],
   theme: {
     extend: {
-       fontFamily: {
+
+  
+  fontFamily: {
     heading: ["Orbitron", "sans-serif"],
-    body: ["Inter", "sans-serif"],
+    body: ["Space Grotesk", "sans-serif"],
   },
+       
       colors: {
-  primary: "#06b6d4",     // neon cyan
+  primary: "#884cb9",     // neon cyan
   secondary: "#f43f5e",   // neon pink/red contrast
   background: "#020617",
   card: "rgba(15, 23, 42, 0.8)",

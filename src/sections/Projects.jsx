@@ -5,7 +5,7 @@ function Projects() {
   const projects = portfolioData.projects;
 
   return (
-    <section id="projects" className="section px-6">
+    <section id="projects">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
@@ -13,7 +13,7 @@ function Projects() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl font-bold text-center mb-16 gradient-text"
+          className="text-4xl md:text-5xl font-heading font-bold text-center mb-16 tracking-wider  flex items-center justify-center gap-3"
         >
           Projects
         </motion.h2>
@@ -44,7 +44,7 @@ function Projects() {
               <div className="p-4">
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold mb-2 group-hover:text-cyan-400 transition">
+                <h3 className="text-xl font-semibold mb-2 group-hover:primary transition">
                   {project.title}
                 </h3>
 
